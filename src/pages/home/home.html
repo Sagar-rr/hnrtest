@@ -1,0 +1,61 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-row >
+  <div col-10><ion-searchbar (ionInput)="searchUser($event)"></ion-searchbar></div>
+  <div col-2 (click)="sort()" style="margin-top: 6px"> <button ion-button style="    margin-left: -3px;">
+    SORT
+
+  </button>
+  </div>
+</ion-row>
+
+
+
+</ion-header>
+
+
+<ion-content padding class="appBackground">
+<div *ngIf="userData?.length; else noData">
+
+  <ion-list *ngFor="let i of userData" >
+
+  <ion-item (click)="gotoProfilePage(i)" class="back">
+    <ion-avatar item-start>
+      <img src={{i.avatar}}>
+    </ion-avatar>
+    <h2 style="color: white">{{i.first_name}} {{i.last_name}}</h2>
+    <p style="color: #f9f9f9">{{i.email}}</p>
+
+  </ion-item>
+</ion-list>
+</div>
+  <ng-template #noData>
+      <div style="vertical-align: middle">
+        No Data Found
+      </div>
+  </ng-template>
+
+  <ion-footer >
+    <ion-row align-items-center text-center>
+      <div col-3>
+    <button  ion-button float-left (click)="prev()">
+      Prev
+    </button>
+      </div>
+    <div col-6 style="color: white
+"> Page {{this.page}}</div>
+      <div col-3>
+    <button
+            ion-button float-right (click)="next()">
+      Next
+    </button>
+      </div>
+    </ion-row>
+  </ion-footer>
+
+</ion-content>

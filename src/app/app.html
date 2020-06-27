@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+    <ion-header>
+
+        <ion-toolbar>
+            <ion-row align-items-center>
+            <!--<ion-title>BNI Vijay</ion-title>-->
+                <div col-2 float-left>
+            <img src="" style="max-height:44px">
+                </div>
+                <div col-8 text-center>
+                    <div text-center><ion-title ></ion-title></div>
+                </div>
+                <div col-2 float-right>
+                </div>
+            </ion-row>
+        </ion-toolbar>
+
+    </ion-header>
+    <ion-content class="appBackground">
+
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
