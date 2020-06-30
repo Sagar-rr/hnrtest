@@ -30,7 +30,7 @@ export class MyApp {
                 let nav = _app.getActiveNavs()[0];
                 let activeView = (nav) ? nav.getActive().instance : null;
 
-                if (activeView instanceof UpdateprofilePage ) {
+                if (activeView instanceof HomePage ) {
                     if (!this.alertpresent) {
                         this.alertpresent = true;
 
@@ -59,7 +59,7 @@ export class MyApp {
                         alert.present();
                     }
 
-                } else  {
+                } else if(activeView instanceof UpdateprofilePage ) {
                     this.nav.setRoot(HomePage);
                 }
             });
